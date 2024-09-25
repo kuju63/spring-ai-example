@@ -1,7 +1,6 @@
 plugins {
     id("org.springframework.boot") version "3.3.1"
     id("io.spring.dependency-management") version "1.1.5"
-//    id("org.graalvm.buildtools.native") version "0.10.2"
     kotlin("jvm") version "1.9.24"
     kotlin("plugin.spring") version "1.9.24"
 }
@@ -30,11 +29,14 @@ extra["springAiVersion"] = "1.0.0-M1"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.springframework.ai:spring-ai-ollama-spring-boot-starter")
     // Documentに記載はないがspring-ai-ollama-spring-boot-starterが依存している
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     // Documentに記載はないがspring-ai-ollama-spring-boot-starterが依存している
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.ai:spring-ai-milvus-store-spring-boot-starter")
+    implementation("org.springframework.ai:spring-ai-pdf-document-reader")
+    implementation("org.springframework.ai:spring-ai-ollama-spring-boot-starter")
+//    implementation("org.springframework.ai:spring-ai-openai-spring-boot-starter")
     testImplementation("io.projectreactor:reactor-test")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")

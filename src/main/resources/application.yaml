@@ -1,0 +1,24 @@
+spring:
+  ai:
+    ollama:
+      embedding:
+        model: mistral
+        enabled: true
+      chat:
+        enabled: true
+        model: mistral
+    vectorstore:
+      milvus:
+        client:
+          host: "localhost"
+          port: 19530
+          username: "root"
+          password: "milvus"
+        databaseName: "default"
+        collectionName: "vector_store"
+        embeddingDimension: 1536
+        indexType: IVF_FLAT
+        metricType: COSINE
+  servlet:
+    multipart:
+      max-file-size: 10MB
